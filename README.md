@@ -22,7 +22,7 @@ No se necesita instalar ningún software adicional. Para probarla:
 
 1. Clona o descarga este repositorio:
    ```bash
-   git clone <URL_DE_TU_REPOSITORIO>
+   git clone https://github.com/lcaputo/taskflow.git
    ```
 2. Entra a la carpeta del proyecto:
    ```bash
