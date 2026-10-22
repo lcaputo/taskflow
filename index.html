@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow - Gestor de Tareas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-wrapper">
+    <header class="app-header">
+      <div class="header-content">
+        <h1>TaskFlow</h1>
+        <p class="subtitle">Organiza tus tareas y proyectos con facilidad</p>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <span class="metric-label">Total</span>
+          <span id="stat-total" class="metric-value">0</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Pendientes</span>
+          <span id="stat-pending" class="metric-value">0</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Completadas</span>
+          <span id="stat-completed" class="metric-value">0</span>
+        </div>
+      </div>
+      <div class="progress-container">
+        <div class="progress-bar-bg">
+          <div id="progress-bar" class="progress-bar-fill" style="width: 0%"></div>
+        </div>
+        <span id="progress-text" class="progress-text">0% completado</span>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <!-- Formulario para nueva tarea -->
+      <section class="card form-section">
+        <form id="task-form" class="task-form">
+          <div class="form-row">
+            <input 
+              type="text" 
+              id="task-input" 
+              placeholder="¿Qué necesitas hacer hoy?" 
+              autocomplete="off" 
+              required
+            >
+            <select id="task-category" title="Categoría">
+              <option value="General">General</option>
+              <option value="Trabajo">Trabajo</option>
+              <option value="Estudio">Estudio</option>
+              <option value="Personal">Personal</option>
+            </select>
+            <select id="task-priority" title="Prioridad">
+              <option value="baja">Baja</option>
+              <option value="media" selected>Media</option>
+              <option value="alta">Alta</option>
+            </select>
+            <button type="submit" id="add-btn" class="btn btn-primary">
+              <span>Agregar</span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Barra de búsqueda y filtros -->
+      <section class="toolbar-section">
+        <div class="search-box">
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Buscar tareas por texto..."
+          >
+        </div>
+        <div class="filter-group" id="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Todas</button>
+          <button class="filter-btn" data-filter="pending">Pendientes</button>
+          <button class="filter-btn" data-filter="completed">Completadas</button>
+        </div>
+      </section>
+
+      <!-- Lista de tareas -->
+      <section class="tasks-section">
+        <ul id="tasks-container" class="tasks-list">
+          <!-- Tareas renderizadas dinámicamente -->
+        </ul>
+        <div id="empty-state" class="empty-state" style="display: none;">
+          <p class="empty-icon">📝</p>
+          <p class="empty-text">No hay tareas para mostrar en esta vista.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>TaskFlow &bull; Proyecto de Programación &bull; Entregable Académico</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
